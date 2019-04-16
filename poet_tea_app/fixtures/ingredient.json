@@ -1,0 +1,214 @@
+[
+    {
+      "model": "tunr_app.song",
+      "fk": 1,
+      "fields": {
+        "title": "This Must Be the Place (Naive Melody) [by Talking Heads]",
+        "album": "7 Singles",
+        "preview_url": "https://p.scdn.co/mp3-preview/aafec4412be78da6d833e75edd64702bfefdfaae?cid=774b29d4f13844c495f206cafdad9c86",
+        "artist": 1
+      }
+    },
+    {
+      "model": "tunr_app.song",
+      "fk": 2,
+      "fields": {
+        "title": "Can’t Let Go, Juno",
+        "album": "Sonderlust",
+        "preview_url": "https://p.scdn.co/mp3-preview/61e48e3a2c380aadd065cd80471f1edbabe21860?cid=774b29d4f13844c495f206cafdad9c86",
+        "artist": 1
+      }
+    },
+    {
+      "model": "tunr_app.song",
+      "fk": 3,
+      "fields": {
+        "title": "Philosophize In It! Chemicalize With It!",
+        "album": "Lighght",
+        "preview_url": "https://p.scdn.co/mp3-preview/059806e28a6b424a91fd4fadd7037dfa99e6c5ff?cid=774b29d4f13844c495f206cafdad9c86",
+        "artist": 1
+      }
+    },
+    {
+      "model": "tunr_app.song",
+      "fk": 4,
+      "fields": {
+        "title": "m'Lover",
+        "album": "Sonderlust",
+        "preview_url": "https://p.scdn.co/mp3-preview/76c60503bde9dc73e91e8c2fafbff1eb6e397327?cid=774b29d4f13844c495f206cafdad9c86",
+        "artist": 1
+      }
+    },
+    {
+      "model": "tunr_app.song",
+      "fk": 5,
+      "fields": {
+        "title": "The Only Living Boy in New York - Recorded at Spotify Studios NYC",
+        "album": "Spotify Singles",
+        "preview_url": "https://p.scdn.co/mp3-preview/4068b9af7abcb8a44355b3f6cb16f8209f398028?cid=774b29d4f13844c495f206cafdad9c86",
+        "artist": 1
+      }
+    },
+    {
+      "model": "tunr_app.song",
+      "fk": 6,
+      "fields": {
+        "title": "1999 WILDFIRE",
+        "album": "BLEACH",
+        "preview_url": "https://p.scdn.co/mp3-preview/43b8aeb423c5f954404a3f54dba0126711ed8ddd?cid=774b29d4f13844c495f206cafdad9c86",
+        "artist": 2
+      }
+    },
+    {
+      "model": "tunr_app.song",
+      "fk": 7,
+      "fields": {
+        "title": "SWEET",
+        "album": "SATURATION II",
+        "preview_url": "https://p.scdn.co/mp3-preview/644f5d422d5d59244245c938d3402f23176e3ed3?cid=774b29d4f13844c495f206cafdad9c86",
+        "artist": 2
+      }
+    },
+    {
+      "model": "tunr_app.song",
+      "fk": 8,
+      "fields": {
+        "title": "NEW ORLEANS",
+        "album": "iridescence",
+        "preview_url": "https://p.scdn.co/mp3-preview/20d2d1b1258a54fee933ccdcae7a6d4cd83c25fc?cid=774b29d4f13844c495f206cafdad9c86",
+        "artist": 2
+      }
+    },
+    {
+      "model": "tunr_app.song",
+      "fk": 9,
+      "fields": {
+        "title": "GOLD",
+        "album": "SATURATION",
+        "preview_url": "https://p.scdn.co/mp3-preview/fdf0d2d8f206ecb26aa68faf4fdf62bbebfdb632?cid=774b29d4f13844c495f206cafdad9c86",
+        "artist": 2
+      }
+    },
+    {
+      "model": "tunr_app.song",
+      "fk": 10,
+      "fields": {
+        "title": "J'OUVERT",
+        "album": "iridesence",
+        "preview_url": "https://p.scdn.co/mp3-preview/1f1492062154520b6e7051c97f0373bbe58fbd2e?cid=774b29d4f13844c495f206cafdad9c86",
+        "artist": 2
+      }
+    },
+    {
+      "model": "tunr_app.song",
+      "fk": 11,
+      "fields": {
+        "title": "POOL",
+        "album": "T H E",
+        "preview_url" : "https://p.scdn.co/mp3-preview/52c7392ca3687d7e00f2680a7db4bb9d320c59bd?cid=774b29d4f13844c495f206cafdad9c86",
+        "artist": 3
+      }
+    },
+    {
+      "model": "tunr_app.song",
+      "fk": 12,
+      "fields": {
+        "title": "potage",
+        "album": "potage",
+        "preview_url" : "https://p.scdn.co/mp3-preview/e540f233acddc63a7f0f0c9419be2af3c1718d6e?cid=774b29d4f13844c495f206cafdad9c86",
+        "artist": 3
+      }
+    },
+    {
+      "model": "tunr_app.song",
+      "fk": 13,
+      "fields": {
+        "title": "おちゃんせんすぅす",
+        "album": "爆裂パニエさん",
+        "preview_url" : "https://p.scdn.co/mp3-preview/bde5565e62460d864b8759d6f7e214a3e082ab38?cid=774b29d4f13844c495f206cafdad9c86",
+        "artist": 3
+      }
+    },
+    {
+      "model": "tunr_app.song",
+      "fk": 14,
+      "fields": {
+        "title": "On the boom",
+        "album": "potage",
+        "preview_url" : "https://p.scdn.co/mp3-preview/d748fd95efa31f4296997bda6361d38441a14ad8?cid=774b29d4f13844c495f206cafdad9c86",
+        "artist": 3
+      }
+    },
+    {
+      "model": "tunr_app.song",
+      "fk": 15,
+      "fields": {
+        "title": "artsick",
+        "album": "T H E",
+        "preview_url" : "https://p.scdn.co/mp3-preview/32de94496adfb2e229da0f944123348e3c474c84?cid=774b29d4f13844c495f206cafdad9c86",
+        "artist": 3
+      }
+    },
+    {
+      "model": "tunr_app.song",
+      "fk": 16,
+      "fields": {
+        "title": "Loud Places",
+        "album": "In Colour",
+        "preview_url" : "https://p.scdn.co/mp3-preview/da2e1688b5492f2acd66caf839c1f6e7cedf9cdb?cid=774b29d4f13844c495f206cafdad9c86",
+        "artist": 4
+      }
+    },
+    {
+      "model": "tunr_app.song",
+      "fk": 17,
+      "fields": {
+        "title": "On Hold (Jamie xx Remix)",
+        "album": "On Hold (Jamie xx Remix)",
+        "preview_url" : "https://p.scdn.co/mp3-preview/abbe471ab4299d90a39597940fa83afe760a3c75?cid=774b29d4f13844c495f206cafdad9c86",
+        "artist": 4
+      }
+    },
+    {
+      "model": "tunr_app.song",
+      "fk": 17,
+      "fields": {
+        "title": "I Know There's Gonna Be (Good Times) [feat. Popcaan]",
+        "album": "I Know There's Gonna Be (Good Times) [feat. Popcaan]",
+        "preview_url" : "https://p.scdn.co/mp3-preview/e6420024b82a4b67931ff455049a6170d6e2b7f6?cid=774b29d4f13844c495f206cafdad9c86",
+        "artist": 4
+      }
+    },
+    {
+      "model": "tunr_app.song",
+      "fk": 18,
+      "fields": {
+        "title": "SeeSaw",
+        "album": "In Colour",
+        "preview_url" : "https://p.scdn.co/mp3-preview/a2c8b4927494fa04741b1a78b31529709b68165f?cid=774b29d4f13844c495f206cafdad9c86",
+        "artist": 4
+      }
+    },
+    {
+      "model": "tunr_app.song",
+      "fk": 19,
+      "fields": {
+        "title": "Obvs",
+        "album": "In Colour",
+        "preview_url" : "https://p.scdn.co/mp3-preview/ca4a9d0f87af71c4547377a837929e68d288ebe4?cid=774b29d4f13844c495f206cafdad9c86",
+        "artist": 4
+      }
+    },
+  
+    {
+      "model": "tunr_app.song",
+      "fk": 20,
+      "fields": {
+        "title": "Stranger In A Room",
+        "album": "In Colour",
+        "preview_url" : "https://p.scdn.co/mp3-preview/db11caa90427af0ffdee0a1d6c7cba0d05620de3?cid=774b29d4f13844c495f206cafdad9c86",
+        "artist": 4
+      }
+    }
+  ]
+  

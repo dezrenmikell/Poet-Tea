@@ -1,0 +1,31 @@
+[
+    {
+      "model": "poet_tea_app.tea",
+      "fk": 1,
+      "fields": {
+        "title": "Flower Power",
+        "photo_url": "https://i.imgur.com/KWjhnhS.jpg?1",
+        "description": "A tea blend made strictly of flowers"
+      }
+    },
+    {
+      "model": "poet_tea_app.tea",
+      "fk": 2,
+      "fields": {
+        "title": "Pillow Talk",
+        "photo_url": "https://i.imgur.com/5xZzNW1.jpg?1",
+        "description": "A blend made to assist with insomnia, or just to have a great nights sleep."
+      }
+    },
+    {
+      "model": "poet_tea_app.tea",
+      "fk": 3,
+      "fields": {
+        "title": "Weight Loss",
+        "photo_url": "https://i.imgur.com/vNHcgdF.jpg?1",
+        "description": "A blend meant to help you heep that summer body, year round."
+      }
+    }
+    
+    
+  ]
