@@ -1,3 +1,4 @@
 from django.contrib import admin
+from .models import Tea, Ingredient
 
-# Register your models here.
+admin.site.register([Tea, Ingredient])
