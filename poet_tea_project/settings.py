@@ -84,9 +84,9 @@ WSGI_APPLICATION = 'poet_tea_project.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'sampl_database',
-        'USER': 'sampl',
-        'PASSWORD': 'sampl',
+        'NAME': 'poettea_database',
+        'USER': 'poettea',
+        'PASSWORD': 'poettea',
         'HOST': 'localhost'
     }
 }
