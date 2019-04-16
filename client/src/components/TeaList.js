@@ -14,7 +14,7 @@ class TeaList extends Component {
 
     fetchTeas = async () => {
         try {
-            const res = await axios.get('/api/teas');
+            const res = await axios.get('/api/v1/teas');
             this.setState({teas: res.data});
         }
         catch (err) {
@@ -32,7 +32,7 @@ class TeaList extends Component {
                 <h1>All Teas</h1>
                 {this.state.teas.map(tea => (
                     <div key={tea.id}>
-                        <Link to={`/tea/${tea.id}`} >{tea.name}</Link>
+                        <Link to={`/teas/${tea.id}`} >{tea.title}</Link>
                     </div>
                 ))}
             </div>
