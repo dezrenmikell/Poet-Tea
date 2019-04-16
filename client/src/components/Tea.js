@@ -33,9 +33,10 @@ class Tea extends Component {
                 <img src={this.state.tea.photo_url} alt=""/>
                 <h1>{this.state.tea.title}</h1>
                 <h4>{this.state.tea.description}</h4>
+                <h2>Ingredients:</h2>
                 {this.state.ingredients.map(ingredient => (
                     <div key={ingredient.id}>
-                        <h2>{ingredient.name}</h2>
+                        <h3> * {ingredient.name}-</h3>
                         <p>{ingredient.description}</p>
                     </div>
                 ))}
