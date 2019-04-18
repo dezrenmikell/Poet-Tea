@@ -32,7 +32,7 @@ class TeaList extends Component {
                 <h1>All Teas</h1>
                 {this.state.teas.map(tea => (
                     <div key={tea.id}>
-                        <Link to={`/teas/${tea.id}`} >{tea.title}</Link>
+                        <Link to={`/teas/${tea.id}/`} >{tea.title}</Link>
                         <div>
                             <img src={tea.photo_url} alt=""/>
                         </div>

@@ -14,7 +14,7 @@ class Health extends Component {
   
     getHealthTips = () => {
       axios
-        .get("https://healthfinder.gov/FreeContent/Developer/Search.json?api_key=uounkvswngttjqjs&TopicID=21")
+        .get("https://healthfinder.gov/FreeContent/Developer/Search.json?api_key=uounkvswngttjqjs&TopicID=21/")
         .then(response => {
           const tips = response.data.Result.Topics.RelatedItems;
           console.log (tips)

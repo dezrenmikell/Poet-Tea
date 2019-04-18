@@ -15,7 +15,7 @@ class Tea extends Component {
 
     fetchTea = async (teaId) => {
         try {
-            const teaResponse = await axios.get(`/api/v1/teas/${teaId}`)
+            const teaResponse = await axios.get(`/api/v1/teas/${teaId}/`)
             this.setState({
                 tea: teaResponse.data,
                 ingredients: teaResponse.data.ingredients,
