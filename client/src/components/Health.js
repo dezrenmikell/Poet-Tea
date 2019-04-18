@@ -27,7 +27,7 @@ class Health extends Component {
     render() {
       const healthTips = this.state.healthTips.map((tip, index) => (
         <div key={index}>
-          <Link to={tip.Url}>{tip.Title}</Link>
+          <a href={tip.Url}>{tip.Title}</a>
         </div>
       ));
       return (
