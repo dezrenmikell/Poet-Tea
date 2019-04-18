@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import axios from "axios";
-import {Link} from "react-router-dom";
 // import styled from "styled-components";
 
 class Health extends Component {
@@ -14,10 +13,10 @@ class Health extends Component {
   
     getHealthTips = () => {
       axios
-        .get("https://healthfinder.gov/FreeContent/Developer/Search.json?api_key=uounkvswngttjqjs&TopicID=21/")
+        .get("https://healthfinder.gov/FreeContent/Developer/Search.json?api_key=uounkvswngttjqjs&TopicID=21")
         .then(response => {
           const tips = response.data.Result.Topics.RelatedItems;
-          console.log (tips)
+          
           this.setState({ healthTips: tips });
         })
         .catch(err => {
