@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import {Link} from "react-router-dom";
 // import styled from "styled-components";
 
 class Health extends Component {
@@ -15,7 +16,7 @@ class Health extends Component {
       axios
         .get("https://healthfinder.gov/FreeContent/Developer/Search.json?api_key=uounkvswngttjqjs&TopicID=21")
         .then(response => {
-          const tips = response.Result;
+          const tips = response.data.Result.Topics.RelatedItems;
           console.log (tips)
           this.setState({ healthTips: tips });
         })
@@ -26,8 +27,7 @@ class Health extends Component {
     render() {
       const healthTips = this.state.healthTips.map((tip, index) => (
         <div key={index}>
-          <h3>{tip.Topics.RelatedItems.Title}</h3>
-          <h3>{tip.Topics.RelatedItems.Url}</h3>
+          <Link to={tip.Url}>{tip.Title}</Link>
         </div>
       ));
       return (
