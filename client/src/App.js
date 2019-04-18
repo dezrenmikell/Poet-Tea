@@ -2,12 +2,17 @@ import React, {Component} from "react";
 import {BrowserRouter as Router, Route, Switch, Link} from "react-router-dom";
 import TeaList from "./components/TeaList";
 import Tea from "./components/Tea";
+import Health from "./components/Health"
+import Header from "./components/Header"
 import "./App.css";
 
 class App extends Component {
     render() {
         return (
             <Router>
+                <div>
+                    <Header />
+                </div>
                 <div className="App">
 
                     <div>
@@ -19,7 +24,8 @@ class App extends Component {
 
                     <Switch>
                       <Route exact path="/" component={TeaList}/>
-                      <Route path="/teas/:id" component={Tea}/>
+                      <Route exact path="/teas/:id" component={Tea}/>
+                      <Route exact path="/health" component={Health}/>
                     </Switch>
                 </div>
             </Router>
