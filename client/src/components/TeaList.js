@@ -14,7 +14,7 @@ class TeaList extends Component {
 
     fetchTeas = async () => {
         try {
-            const res = await axios.get('/api/v1/teas');
+            const res = await axios.get('/api/v1/teas/');
             this.setState({teas: res.data});
         }
         catch (err) {
