@@ -12,7 +12,7 @@ class Tea extends Component {
     }
 
     componentDidMount() {
-        const teaId = this.props.match.params.id;
+        const teaId = this.props.match.params.teaId;
         this.fetchTea(teaId)
     }
 
@@ -31,7 +31,7 @@ class Tea extends Component {
     }
 
     createIngredient = () => {
-        const teaId = this.props.match.params.tea._id;
+        const teaId = this.props.match.params.teaId;
         axios.post(`/api/v1/teas/${teaId}/ingredients`).then(res =>{
             const newIngredients = [...this.state.ingredients];
             newIngredients.unshift(res.data);
@@ -45,9 +45,9 @@ class Tea extends Component {
             this.setState({ ingredients: res.data});
         });
     };
-    deleteTea = (tea) =>{
-        tea = this.props.match.params.tea;
-        axios.delete(`/api/v1/teas/${tea.id}/`).then(() =>{
+    deleteTea = (teaId) =>{
+        teaId = this.props.match.params.teaId;
+        axios.delete(`/api/v1/teas/${teaId}/`).then(() =>{
             this.props.history.goBack();
         });
 
@@ -66,7 +66,7 @@ class Tea extends Component {
     };
 
     updateIngredient = (ingredient, e) => {
-        const teaId = this.props.match.params.tea.id;
+        const teaId = this.props.match.params.teaId;
         axios
           .patch(`/api/v1/teas/${teaId}/ingredients/${ingredient.id}`, { ingredient })
           .then(res => {
@@ -77,7 +77,7 @@ class Tea extends Component {
     render() {
         return (
             <div>
-                <button onClick={()=> this.deleteTea(this.state.tea.id)}>
+                <button onClick={()=> this.deleteTea(this.state.teaId)}>
                 Delete Tea
                 </button>
                 <img src={this.state.tea.photo_url} alt=""/>

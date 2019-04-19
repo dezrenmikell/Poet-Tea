@@ -24,7 +24,7 @@ class App extends Component {
 
                     <Switch>
                       <Route exact path="/" component={TeaList}/>
-                      <Route exact path="/teas/:id" component={Tea}/>
+                      <Route exact path="/teas/:teaId" component={Tea}/>
                       <Route exact path="/health" component={Health}/>
                     </Switch>
                 </div>
