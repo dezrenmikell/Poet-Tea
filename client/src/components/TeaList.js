@@ -32,14 +32,14 @@ class TeaList extends Component {
     }
 
     createTea = ()=>{
-        axios.post("/api/v1/teas/", {tea: this.state.tea}).then(res =>{
+        axios.post("/api/v1/teas/", this.state.tea).then(res =>{
             this.setState({redirectToHome: true, createdTea: res.data});
         });
     };
 
     handleChange = e =>{
         const newTea = { ...this.state.tea};
-        newTea[e.target.title] = e.target.value;
+        newTea[e.target.name] = e.target.value;
         this.setState({tea: newTea});
     };
 
@@ -59,7 +59,7 @@ class TeaList extends Component {
             return <div>{this.state.error}</div>
         }
         if(this.state.redirectToHome === true){
-            return <Redirect to={`/tea/${this.state.createdTea._id}/`} />;
+            return <Redirect to={`/teas/${this.state.createdTea.id}/`} />;
         }
         return (
             <div>
