@@ -4,7 +4,10 @@ import axios from 'axios';
 class Tea extends Component {
 
     state = {
-            tea: {},
+            tea: {
+                title: "",
+                teaId:"",
+            },
             ingredients: [],
     }
 
@@ -27,7 +30,15 @@ class Tea extends Component {
         }
     }
 
-    crea
+    createIngredient = () => {
+        const teaId = this.props.match.params.teaId;
+        axios.post(`/api/v1/teas/${teaId}/ingredients`).then(res =>{
+            const newIngredients = [...this.state.ingredients];
+            newIngredients = [...this.state.ingredients];
+            newIngredients.unshift(res.data);
+            this.setState({ ingredient: newIngredients});
+        })
+    }
     render() {
         return (
             <div>
