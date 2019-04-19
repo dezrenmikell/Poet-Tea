@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import axios from 'axios';
+import Ingredient from './Ingredient';
 
 class Tea extends Component {
 
@@ -85,14 +86,27 @@ class Tea extends Component {
                 <h4>{this.state.tea.description}</h4>
                 <h2>Ingredients:</h2>
                 <button onClick={this.createIngredient}> +New ingredient</button>
-                {this.state.ingredients.map(ingredient => (
-                    
-                    <div key={ingredient.id}>
-                        
-                        <h3> * {ingredient.name}-</h3>
+                <div>
+                {this.state.ingredients.map(ingredient => {
+                    return(
+                        <div>
+                    <Ingredient
+                     key={ingredient.id}
+                    ingredient={ingredient}
+                    deleteIngredient={this.deleteIngredient}
+                    handleChange={this.handleChange}
+                    updateIngredient={this.updateIngredient}
+                     />
+                     {ingredient.name}
                         <p>{ingredient.description}</p>
-                    </div>
-                ))}
+                     </div>
+                     
+                    )
+                    })}
+                        
+                    
+                </div>
+
             </div>
         );
     }
