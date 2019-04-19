@@ -103,7 +103,7 @@ class TeaList extends Component {
                             value={this.state.tea.photo_url}
                         />
                     </div>
-                    <button> Create Tea</button>
+                    <button onClick={this.handleCreation}> Create Tea</button>
                 </form>
             </div>
         );
