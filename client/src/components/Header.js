@@ -3,16 +3,16 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 const CoolNav = styled.div`
-  background: cadetblue;
+  background: orange;
   display: flex;
   flex-direction: column;
   border-radius: 10px;
   border: 4px solid black;
-  height: 190px;
+  height: 200px;
   margin: 0 auto;
   img{
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
   },
   h1,
   h3 {
@@ -36,8 +36,7 @@ class Header extends Component {
       <div>
         <CoolNav>
           <StyledLink to="/health">Health Tips</StyledLink>
-          
-          <h1>Poet-Tea</h1>
+          <StyledLink to="/jewlerys">Jewlery Page</StyledLink>
           <img src={'https://i.imgur.com/9QlQwWB.jpg?1'} alt="" />
           <h3>AMAZING TO TASTE, TOUCH, FEEL AND SEE..SOUNDS LIKE POETRY</h3>
         <StyledLink to="/jewlerys">Jewlery Page</StyledLink>

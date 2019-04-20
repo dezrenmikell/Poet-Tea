@@ -18,7 +18,7 @@ class App extends Component {
                 <div className="App">
 
                     <div>
-                        <h1>Poet-Tea</h1>
+
                         <div>
                             <div><Link to="/">All Teas</Link></div>
                         </div>
