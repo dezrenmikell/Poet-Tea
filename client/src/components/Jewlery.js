@@ -1,112 +1,58 @@
-import React, { Component } from 'react';
-import { Redirect, Link } from 'react-router-dom';
-import axios from 'axios';
+import React, { Component } from "react";
+import axios from "axios";
 
-class JewleryList extends Component {
-    state = {
-        error: '',
-        jewlerys: [],
-        jewlery:{
-            title: "",
-            description:"",
-            photo_url:"",
-        },
-        redirectToHome: false,
-        createdJewlery: {}
-    };
 
-    componentDidMount(){
-        this.fetchJewlerys();
+class Jewlery extends Component {
+  state = {
+    jewlery: {
+      title: "",
+      jewleryId: ""
+    },
+    
+  };
+
+  componentDidMount() {
+    const jewleryId = this.props.match.params.jewleryId;
+    this.fetchJewlery(jewleryId);
+  }
+
+  fetchJewlery = async jewleryId => {
+    try {
+      const jewleryResponse = await axios.get(`/api/v1/jewlerys/${jewleryId}/`);
+      this.setState({
+        jewlery: jewleryResponse.data,
+        
+      });
+    } catch (error) {
+      console.log(error);
+      this.setState({ error: error.message });
     }
+  };
 
-    fetchJewlerys = async () => {
-        try {
-            const res = await axios.get('/api/v1/jewlerys/');
-            this.setState({jewlerys: res.data});
-        }
-        catch (err) {
-            console.log(err)
-            this.setState({error: err.message})
-        }
-    }
+  
+  
+  deleteJewlery= jewleryId => {
+    jewleryId = this.props.match.params.jewleryId;
+    axios.delete(`/api/v1/jewlerys/${jewleryId}/`).then(() => {
+      this.props.history.goBack();
+    });
+  };
 
-    createJewlery = ()=>{
-        axios.post("/api/v1/jewlerys/", this.state.jewlery).then(res =>{
-            this.setState({redirectToHome: true, createdTea: res.data});
-        });
-    };
 
-    handleChange = e =>{
-        const newJewlery = { ...this.state.jewlery};
-        newJewlery[e.target.name] = e.target.value;
-        this.setState({tea: newJewlery});
-    };
-
-    handleCreation = e => {
-        e.preventDefault();
-        this.createJewlery();
-    };
-
-    deleteJewlery = () =>{
-        const jewleryId = this.props.match.params.jewleryId;
-        axios.delete(`api/v1/jewlery/${jewleryId}/`);
-        this.props.history.goBack();
-    }
-
-    render() {
-        if (this.state.error){
-            return <div>{this.state.error}</div>
-        }
-        if(this.state.redirectToHome === true){
-            return <Redirect to={`/jewlerys/${this.state.createdJewlery.id}/`} />;
-        }
-        return (
-            <div>
-                <h1>All Jewlery</h1>
-                {this.state.jewlerys.map(jewlery => {
-                    return(
-                    <div key={jewlery.id}>
-                        <Link to={`/jewlerys/${jewlery.id}/`} key={jewlery.id}>{jewlery.title}</Link>
-                        <div>
-                            <img src={jewlery.photo_url} alt=""/>
-                        </div>
-                    </div>
-                )})}
-                <h2> Create Jewlery</h2>
-                <form onSubmit={this.handleCreation}>
-                    <div>
-                        <label htmlFor="title">Jewlery Title</label>
-                        <input
-                            type="text"
-                            name="title"
-                            onChange={this.handleChange}
-                            value={this.state.jewlery.title}
-                        />
-                    </div>
-                    <div>
-                        <label htmlFor="description">Description</label>
-                        <input
-                            type="text"
-                            name="description"
-                            onChange={this.handleChange}
-                            value = {this.state.jewlery.description}
-                        />
-
-                    </div>
-                    <div>
-                        <label htmlFor="photo_url">Picture Link</label>
-                        <input
-                            type="text"
-                            name="photo_url"
-                            onChange={this.handleChange}
-                            value={this.state.jewlery.photo_url}
-                        />
-                    </div>
-                    <button onClick={this.handleCreation}> Create Jewlery</button>
-                </form>
-            </div>
-        );
-    }
+  render() {
+    return (
+      <div>
+        <button onClick={() => this.deleteJewlery(this.state.jewlery.id)}>
+          Delete Jewlery
+        </button>
+        <img src={this.state.jewlery.photo_url} alt="" />
+        <h1>{this.state.jewlery.title}</h1>
+        <h4>{this.state.jewlery.description}</h4>
+        
+        </div>
+     
+    );
+  }
 }
 
-export default JewleryList;
+export default Jewlery;
