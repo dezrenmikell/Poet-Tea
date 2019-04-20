@@ -49,7 +49,7 @@ class JewleryList extends Component {
 
     deleteJewlery = () =>{
         const jewleryId = this.props.match.params.jewleryId;
-        axios.delete(`api/v1/jewlery/${jewleryId}/`);
+        axios.delete(`api/v1/jewlerys/${jewleryId}/`);
         this.props.history.goBack();
     }
 
