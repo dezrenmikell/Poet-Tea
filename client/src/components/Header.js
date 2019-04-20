@@ -32,8 +32,10 @@ class Header extends Component {
       <div>
         <CoolNav>
           <StyledLink to="/health">Health Tips</StyledLink>
+          
           <h1>Poet-Tea</h1>
           <h3>AMAZING TO TASTE, TOUCH, FEEL AND SEE..SOUNDS LIKE POETRY</h3>
+        <StyledLink to="/jewlerys">Jewlery Page</StyledLink>
         </CoolNav>
       </div>
     );
