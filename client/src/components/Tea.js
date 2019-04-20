@@ -81,14 +81,14 @@ class Tea extends Component {
   };
 
   updateIngredient = (ingredient, e) => {
-    // tea: #
-    const teaId = this.props.match.params.teaId;
-    ingredient.teaId = teaId;
+    let ingredientId = ingredient.id
     console.log(ingredient)
     axios
-      .patch(`/api/v1/ingredients/${ingredient.id}/`, { ingredient })
+      .patch(`/api/v1/ingredients/${ingredientId}/`, { ingredient })
       .then(res => {
         this.setState({ ingredients: res.data.ingredients });
+        this.props.history.goBack();
+
       });
   };
 
@@ -121,8 +121,6 @@ class Tea extends Component {
           </div>
           <button>ADD</button>
         </form>
-
-        <button onClick={this.createIngredient}> +New ingredient</button>
         <div>
           {this.state.ingredients.map(ingredient => {
             
