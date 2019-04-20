@@ -81,13 +81,11 @@ class Tea extends Component {
   };
 
   updateIngredient = (ingredient, e) => {
-    let ingredientId = ingredient.id
     console.log(ingredient)
     axios
-      .patch(`/api/v1/ingredients/${ingredientId}/`, { ingredient })
+      .patch(`/api/v1/ingredients/${ingredient.id}/`,  ingredient )
       .then(res => {
         this.setState({ ingredients: res.data.ingredients });
-        this.props.history.goBack();
 
       });
   };
