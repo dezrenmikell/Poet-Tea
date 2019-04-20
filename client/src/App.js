@@ -4,6 +4,7 @@ import TeaList from "./components/TeaList";
 import Tea from "./components/Tea";
 import Health from "./components/Health"
 import Header from "./components/Header"
+import Jewlery from "./components/Jewlery"
 import "./App.css";
 
 class App extends Component {
@@ -25,6 +26,7 @@ class App extends Component {
                     <Switch>
                       <Route exact path="/" component={TeaList}/>
                       <Route exact path="/teas/:teaId" component={Tea}/>
+                      <Route exact path="/jewlerys" component={Jewlery}/>
                       <Route exact path="/health" component={Health}/>
                     </Switch>
                 </div>
