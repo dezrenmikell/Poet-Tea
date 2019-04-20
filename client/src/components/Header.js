@@ -10,6 +10,10 @@ const CoolNav = styled.div`
   border: 4px solid black;
   height: 190px;
   margin: 0 auto;
+  img{
+    width: 200px;
+    height: 200px;
+  },
   h1,
   h3 {
     text-align: center;
@@ -34,7 +38,7 @@ class Header extends Component {
           <StyledLink to="/health">Health Tips</StyledLink>
           
           <h1>Poet-Tea</h1>
-          <img src={'https://i.imgur.com/t3aUwnR.jpg?2} alt="" />
+          <img src={'https://i.imgur.com/9QlQwWB.jpg?1'} alt="" />
           <h3>AMAZING TO TASTE, TOUCH, FEEL AND SEE..SOUNDS LIKE POETRY</h3>
         <StyledLink to="/jewlerys">Jewlery Page</StyledLink>
         </CoolNav>
