@@ -4,6 +4,7 @@ from . import views
 router = routers.DefaultRouter()
 router.register('teas', views.TeaView)
 router.register('ingredients', views.IngredientView)
+router.register('jewlerys', views.JewleryView)
 
 urlpatterns = [
     path('', include(router.urls))

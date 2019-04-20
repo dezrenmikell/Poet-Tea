@@ -1,0 +1,31 @@
+[
+    {
+      "model": "poet_tea_app.jewlery",
+      "fk": 1,
+      "fields": {
+        "title": "Men's Chain w/ Stones",
+        "photo_url": "https://i.imgur.com/CsYIg2H.jpg?1",
+        "description": "A copper chain made with Adventurine, Amazonite, and Amethyst"
+      }
+    },
+    {
+      "model": "poet_tea_app.jewlery",
+      "fk": 2,
+      "fields": {
+        "title": "Love Bracelet",
+        "photo_url": "https://i.imgur.com/5xZzNW1.jpg?1",
+        "description": "A copper bracelet, with chain, that says Love "
+      }
+    },
+    {
+      "model": "poet_tea_app.jewlery",
+      "fk": 3,
+      "fields": {
+        "title": "Men's Cuff w/ Chain",
+        "photo_url": "https://i.imgur.com/61vnXXM.jpg?1",
+        "description": "A copper cuff, for men, with a chain"
+      }
+    }
+    
+    
+  ]

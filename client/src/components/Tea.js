@@ -81,11 +81,12 @@ class Tea extends Component {
   };
 
   updateIngredient = (ingredient, e) => {
+    e.preventDefault();
     console.log(ingredient)
     axios
-      .patch(`/api/v1/ingredients/${ingredient.id}/`,  ingredient )
+      .put(`/api/v1/ingredients/${ingredient.id}/`,  ingredient )
       .then(res => {
-        this.setState({ ingredients: res.data.ingredients });
+        this.setState({ ingredients: res.data });
 
       });
   };
@@ -124,6 +125,8 @@ class Tea extends Component {
             
             return (
               <div key={ingredient.id}>
+                <h3>{ingredient.name}</h3>
+                <p>{ingredient.description}</p>
                 <Ingredient
                   key={ingredient.id}
                   ingredient={ingredient}
@@ -133,8 +136,7 @@ class Tea extends Component {
                   handleChange={this.handleChange}
                   updateIngredient={this.updateIngredient}
                 />
-                {ingredient.name}
-                <p>{ingredient.description}</p>
+                
               </div>
             );
           })}
