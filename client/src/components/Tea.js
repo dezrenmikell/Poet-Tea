@@ -86,7 +86,7 @@ class Tea extends Component {
     axios
       .put(`/api/v1/ingredients/${ingredient.id}/`,  ingredient )
       .then(res => {
-        this.setState({ ingredients: res.data });
+        this.setState({ ingredient: res.data });
 
       });
   };
