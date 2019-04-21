@@ -50,7 +50,7 @@ const StuffWrapper = styled.div`
         display: flex;
         text-align: center;
         vertical-align: middle;
-        height: 150px;
+        height: 50px;
         border: 4px solid silver;
         justify-content: center;
         align-items: center;
