@@ -4,7 +4,7 @@ This app was created on behalf of Poet-Tea, a small homemade tea and jewlery bus
 [Visit Site](https://poet-tea.herokuapp.com/)
 
 ## WireFrames
-![image](https://i.imgur.com/GlqlDWQ.png)
+![image](https://i.imgur.com/i8hZWSv.png)
 ![image](https://i.imgur.com/QytzNdg.png)
 ![image](https://i.imgur.com/LZBq0rN.png)
 ![image](https://i.imgur.com/K18s7vU.png)
