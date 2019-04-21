@@ -1,6 +1,15 @@
 import React, { Component } from 'react';
 import { Redirect, Link } from 'react-router-dom';
 import axios from 'axios';
+import styled from 'styled-components';
+
+const StyledLink = styled(Link)`
+  background: silver;
+  border: 2px solid black;
+  border-radius: 8px;
+  width: 100px;
+  text-align: center;
+`;
 
 class TeaList extends Component {
     state = {
@@ -63,11 +72,10 @@ class TeaList extends Component {
         }
         return (
             <div>
-                <h1>All Teas</h1>
                 {this.state.teas.map(tea => {
                     return(
                     <div key={tea.id}>
-                        <Link to={`/teas/${tea.id}/`} key={tea.id}>{tea.title}</Link>
+                        <StyledLink to={`/teas/${tea.id}/`} key={tea.id}>{tea.title}</StyledLink>
                         <div>
                             <img src={tea.photo_url} alt=""/>
                         </div>

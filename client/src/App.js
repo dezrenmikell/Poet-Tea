@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import styled from 'styled-components';
 import {BrowserRouter as Router, Route, Switch, Link} from "react-router-dom";
 import TeaList from "./components/TeaList";
 import Tea from "./components/Tea";
@@ -7,6 +8,14 @@ import Header from "./components/Header"
 import JewleryList from "./components/JewleryList"
 import Jewlery from "./components/Jewlery"
 import "./App.css";
+
+const StyledLink = styled(Link)`
+  background: silver;
+  border: 2px solid black;
+  border-radius: 8px;
+  width: 100px;
+  text-align: center;
+`;
 
 class App extends Component {
     render() {
@@ -20,7 +29,7 @@ class App extends Component {
                     <div>
 
                         <div>
-                            <div><Link to="/">All Teas</Link></div>
+                            <div><StyledLink to="/">All Teas</StyledLink></div>
                         </div>
                     </div>
 
