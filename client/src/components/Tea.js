@@ -1,6 +1,72 @@
 import React, { Component } from "react";
 import axios from "axios";
 import Ingredient from "./Ingredient";
+import styled from "styled-components";
+
+const StuffWrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+    border: 7px solid orange;
+    margin: 0 auto;
+    background: black;
+    
+    margin-top: 30px;
+    width: 325px;
+    border-radius: 50px;
+    height: 300px;
+    
+    
+
+   
+
+
+    input,textarea {
+        margin-bottom: 30px;
+        font-size: 1.8em;
+        background-color: orange;        
+        text-align: center;
+        margin-top: 10px;
+        margin: 0 auto;
+        width: 300px;
+        border-radius: 50px;
+        
+    }
+    input{
+        font-weight: bold;
+        font-size: 2em;
+        
+        height: 50px;
+        padding: 5px;
+        border: 4px solid silver;
+        border-radius: 50px;
+        margin-bottom: 30px;
+        background-color: orange;        
+        text-align: center;
+        margin-top: 10px;
+
+ 
+    }
+    textarea{
+        display: flex;
+        text-align: center;
+        vertical-align: middle;
+        height: 150px;
+        border: 4px solid silver;
+        justify-content: center;
+        align-items: center;
+        padding: 15px;
+        width 270px;
+    }
+    `;
+const DeleteButton = styled.button`
+  height: 20px;
+  margin: 0 auto;
+  marigin-top: 20px;
+  width: 70px;
+  border-radius: 10px;
+  background: red;
+  font-weight: bold;
+`;
 
 class Tea extends Component {
   state = {
@@ -94,9 +160,9 @@ class Tea extends Component {
   render() {
     return (
       <div>
-        <button onClick={() => this.deleteTea(this.state.teaId)}>
+        <DeleteButton onClick={() => this.deleteTea(this.state.teaId)}>
           Delete Tea
-        </button>
+        </DeleteButton>
         <img src={this.state.tea.photo_url} alt="" />
         <h1>{this.state.tea.title}</h1>
         <h4>{this.state.tea.description}</h4>
@@ -124,7 +190,7 @@ class Tea extends Component {
           {this.state.ingredients.map(ingredient => {
             
             return (
-              <div key={ingredient.id}>
+              <StuffWrapper key={ingredient.id}>
                 <h3>{ingredient.name}</h3>
                 <p>{ingredient.description}</p>
                 <Ingredient
@@ -137,7 +203,7 @@ class Tea extends Component {
                   updateIngredient={this.updateIngredient}
                 />
                 
-              </div>
+              </StuffWrapper>
             );
           })}
         </div>

@@ -10,6 +10,44 @@ const StyledLink = styled(Link)`
   width: 100px;
   text-align: center;
 `;
+const PageWrapper = styled.div`
+        background: silver;
+        border: 4px solid black;
+
+        border-radius: 10px;
+    h2{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        background: orange;
+        border: 4px solid black
+        border-radius: 30px;
+
+    }
+    
+`;
+const NewButton = styled.button`
+    background orange;
+    border-radius: 30px;
+    font-weight: bold;
+    text-align: center;
+    border: 4px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    
+`;
+const DeleteButton = styled.button`
+  height: 20px;
+  margin: 0 auto;
+  marigin-top: 20px;
+  width: 70px;
+  border-radius: 10px;
+  background: red;
+  font-weight: bold;
+`;
 
 class TeaList extends Component {
     state = {
@@ -71,7 +109,7 @@ class TeaList extends Component {
             return <Redirect to={`/teas/${this.state.createdTea.id}/`} />;
         }
         return (
-            <div>
+            <PageWrapper>
                 {this.state.teas.map(tea => {
                     return(
                     <div key={tea.id}>
@@ -81,6 +119,7 @@ class TeaList extends Component {
                         </div>
                     </div>
                 )})}
+                <NewButton> Create A Tea </NewButton>
                 <h2> Create A Tea</h2>
                 <form onSubmit={this.handleCreation}>
                     <div>
@@ -111,9 +150,9 @@ class TeaList extends Component {
                             value={this.state.tea.photo_url}
                         />
                     </div>
-                    <button onClick={this.handleCreation}> Create Tea</button>
+                    <NewButton onClick={this.handleCreation}> Create Tea</NewButton>
                 </form>
-            </div>
+            </PageWrapper>
         );
     }
 }
