@@ -12,7 +12,7 @@ const CoolNav = styled.div`
   margin: 0 auto;
   img{
     width: 150px;
-    height: 115px;
+    height: 75px;
   },
   h1,
   h3 {

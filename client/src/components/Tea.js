@@ -8,14 +8,15 @@ const StuffWrapper = styled.div`
     flex-direction: column;
     border: 7px solid orange;
     margin: 0 auto;
-    background: black;
+    background: silver;
+
+    width: 325px;
     border-radius: 50px;
-    font-family: 'Lobster', cursive;
-    
-    
-
-   
-
+    height: 300px;
+    align-items: center;
+    justify-content: center;
+    border: 4px solid black;
+    margin-top: 10px;
 
     input,textarea {
         margin-bottom: 30px;
@@ -25,8 +26,7 @@ const StuffWrapper = styled.div`
         margin: 0 auto;
         width: 300px;
         border-radius: 50px;
-        font-family: 'Lobster', cursive;
-        
+        display: flex;
     }
     input{
         font-weight: bold;
@@ -38,6 +38,8 @@ const StuffWrapper = styled.div`
         border-radius: 50px;
         background-color: orange;        
         text-align: center;
+
+ 
     }
     textarea{
         display: flex;
@@ -51,6 +53,25 @@ const StuffWrapper = styled.div`
         width 270px;
     }
     `;
+
+    const PageWrapper = styled.div`
+    background: orange;
+    border: 4px solid black;
+
+    border-radius: 10px;
+h2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: silver;
+    border: 4px solid black
+    border-radius: 30px;
+
+}
+
+`;
+
 const DeleteButton = styled.button`
   margin: 0 auto;
   marigin-top: 20px;
@@ -159,7 +180,7 @@ class Tea extends Component {
 
   render() {
     return (
-      <div>
+      <PageWrapper>
         <DeleteButton onClick={() => this.deleteTea(this.state.teaId)}>
           Delete Tea
         </DeleteButton>
@@ -207,7 +228,7 @@ class Tea extends Component {
             );
           })}
         </div>
-      </div>
+      </PageWrapper>
     );
   }
 }
