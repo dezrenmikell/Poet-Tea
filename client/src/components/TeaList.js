@@ -76,7 +76,7 @@ const PageWrapper = styled.div`
     
 `;
 const NewButton = styled.button`
-    background orange;
+    background green;
     border-radius: 30px;
     font-weight: bold;
     text-align: center;
@@ -140,6 +140,12 @@ class TeaList extends Component {
         this.props.history.goBack();
     }
 
+    toggleEditForm = () => {
+        this.setState((state, props) => {
+            return {isEditFormDisplayed: !state.isEditFormDisplayed}
+        })
+    }
+
     render() {
         if (this.state.error){
             return <div>{this.state.error}</div>
@@ -160,7 +166,7 @@ class TeaList extends Component {
                     </StuffWrapper>
                 )})}
                 <div>
-                <NewButton> Create A Tea </NewButton>
+                <NewButton onClick={this.toggleEditForm}> Create A Tea </NewButton>
                 </div>
                 <h2> Create A Tea</h2>
                 <form onSubmit={this.handleCreation}>
