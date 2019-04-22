@@ -8,32 +8,31 @@ const StuffWrapper = styled.div`
     flex-direction: column;
     border: 7px solid orange;
     margin: 0 auto;
+    margin-top: 5px;
     background: silver;
-
-    width: 325px;
     border-radius: 50px;
-    height: 300px;
     align-items: center;
     justify-content: center;
     border: 4px solid black;
-    margin-top: 10px;
+
+    img{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+    }
 
     input,textarea {
-        margin-bottom: 30px;
         font-size: 1.8em;
         background-color: orange;        
         text-align: center;
         margin: 0 auto;
-        width: 300px;
         border-radius: 50px;
         display: flex;
     }
     input{
         font-weight: bold;
         font-size: 2em;
-        
-        height: 50px;
-
         border: 4px solid silver;
         border-radius: 50px;
         background-color: orange;        
@@ -45,20 +44,20 @@ const StuffWrapper = styled.div`
         display: flex;
         text-align: center;
         vertical-align: middle;
-        height: 50px;
         border: 4px solid silver;
         justify-content: center;
         align-items: center;
-        padding: 15px;
-        width 270px;
     }
+    
     `;
 
     const PageWrapper = styled.div`
     background: orange;
     border: 4px solid black;
-
     border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+  
 h2{
     display: flex;
     align-items: center;
@@ -67,9 +66,36 @@ h2{
     background: silver;
     border: 4px solid black
     border-radius: 30px;
-
+}
+h4{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: silver;
+  border: 4px solid black
+  border-radius: 30px;
 }
 
+h3{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: orange;
+  border: 4px solid black
+  border-radius: 30px;
+}
+
+p{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: orange;
+  border: 4px solid black
+  border-radius: 30px;
+}
 `;
 
 const DeleteButton = styled.button`
@@ -181,12 +207,15 @@ class Tea extends Component {
   render() {
     return (
       <PageWrapper>
+        <h2>{this.state.tea.title}</h2>
+        <h4>{this.state.tea.description}</h4>
+        <img src={this.state.tea.photo_url} alt="" />
         <DeleteButton onClick={() => this.deleteTea(this.state.teaId)}>
           Delete Tea
         </DeleteButton>
-        <img src={this.state.tea.photo_url} alt="" />
-        <h1>{this.state.tea.title}</h1>
-        <h4>{this.state.tea.description}</h4>
+        
+        
+        
         <h2>Ingredients:</h2>
 
         <form onSubmit={this.createIngredient}>

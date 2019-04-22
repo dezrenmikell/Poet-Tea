@@ -1,6 +1,93 @@
 import React, { Component } from 'react';
 import { Redirect, Link } from 'react-router-dom';
 import axios from 'axios';
+import styled from 'styled-components';
+
+const StyledLink = styled(Link)`
+  background: orange;
+  text-align: center;
+  border-radius: 15px;
+  border: 2px solid black;
+`;
+const StuffWrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+    border: 7px solid orange;
+    margin: 0 auto;
+    background: silver;
+
+    width: 325px;
+    border-radius: 50px;
+    height: 300px;
+    align-items: center;
+    justify-content: center;
+    border: 4px solid black;
+    margin-top: 10px;
+
+    input,textarea {
+        margin-bottom: 30px;
+        font-size: 1.8em;
+        background-color: orange;        
+        text-align: center;
+        margin: 0 auto;
+        width: 300px;
+        border-radius: 50px;
+        display: flex;
+    }
+    input{
+        font-weight: bold;
+        font-size: 2em;
+        
+        height: 50px;
+
+        border: 4px solid silver;
+        border-radius: 50px;
+        background-color: orange;        
+        text-align: center;
+
+ 
+    }
+    textarea{
+        display: flex;
+        text-align: center;
+        vertical-align: middle;
+        height: 50px;
+        border: 4px solid silver;
+        justify-content: center;
+        align-items: center;
+        padding: 15px;
+        width 270px;
+    }
+    `;
+const PageWrapper = styled.div`
+        background: orange;
+        border: 4px solid black;
+
+        border-radius: 10px;
+    h2{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        background: silver;
+        border: 4px solid black
+        border-radius: 30px;
+
+    }
+    
+`;
+const NewButton = styled.button`
+    background green;
+    border-radius: 30px;
+    font-weight: bold;
+    text-align: center;
+    border: 4px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    
+`;
 
 class JewleryList extends Component {
     state = {
@@ -61,16 +148,16 @@ class JewleryList extends Component {
             return <Redirect to={`/jewlerys/${this.state.createdJewlery.id}/`} />;
         }
         return (
-            <div>
-                <h1>All Jewlery</h1>
+            <PageWrapper>
+                <h2>All Jewlery</h2>
                 {this.state.jewlerys.map(jewlery => {
                     return(
-                    <div key={jewlery.id}>
-                        <Link to={`/jewlerys/${jewlery.id}/`} key={jewlery.id}>{jewlery.title}</Link>
+                    <StuffWrapper key={jewlery.id}>
+                        <StyledLink to={`/jewlerys/${jewlery.id}/`} key={jewlery.id}>{jewlery.title}</StyledLink>
                         <div>
                             <img src={jewlery.photo_url} alt=""/>
                         </div>
-                    </div>
+                    </StuffWrapper>
                 )})}
                 <h2> Create Jewlery</h2>
                 <form onSubmit={this.handleCreation}>
@@ -102,9 +189,9 @@ class JewleryList extends Component {
                             value={this.state.jewlery.photo_url}
                         />
                     </div>
-                    <button onClick={this.handleCreation}> Create Jewlery</button>
+                    <NewButton onClick={this.handleCreation}> Create Jewlery</NewButton>
                 </form>
-            </div>
+            </PageWrapper>
         );
     }
 }

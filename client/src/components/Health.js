@@ -1,6 +1,21 @@
 import React, { Component } from "react";
 import axios from "axios";
-// import styled from "styled-components";
+import styled from 'styled-components';
+
+const CoolA = styled.div`
+a{
+  background: orange;
+  text-align: center;
+  border-radius: 15px;
+  border: 2px solid black;
+}
+h2{
+  background: orange;
+  text-align: center;
+  border-radius: 15px;
+  border: 2px solid black;
+}
+`;
 
 class Health extends Component {
     state = {
@@ -25,16 +40,16 @@ class Health extends Component {
     };
     render() {
       const healthTips = this.state.healthTips.map((tip, index) => (
-        <div key={index}>
+        <CoolA key={index}>
           <a href={tip.Url}>{tip.Title}</a>
-        </div>
+        </CoolA>
       ));
       return (
         <div>
-          <div>
-            <h1>HEALTH TIPS</h1>
+          <CoolA>
+            <h2>HEALTH TIPS</h2>
             <div>{healthTips}</div>
-          </div>
+          </CoolA>
         </div>
       );
     }
