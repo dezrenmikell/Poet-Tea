@@ -5,10 +5,8 @@ import styled from 'styled-components';
 
 const StyledLink = styled(Link)`
   background: orange;
-  border: 2px solid black;
-  border-radius: 8px;
-  width: 100px;
   text-align: center;
+  border-radius: 15px;
 `;
 const StuffWrapper = styled.div`
     display: flex;
@@ -23,6 +21,7 @@ const StuffWrapper = styled.div`
     align-items: center;
     justify-content: center;
     border: 4px solid black;
+    margin-top: 10px;
 
     input,textarea {
         margin-bottom: 30px;
@@ -154,7 +153,7 @@ class TeaList extends Component {
                 {this.state.teas.map(tea => {
                     return(
                     <StuffWrapper key={tea.id}>
-                        <h3><StyledLink to={`/teas/${tea.id}/`} key={tea.id}>{tea.title}</StyledLink></h3>
+                        <h2><StyledLink to={`/teas/${tea.id}/`} key={tea.id}>{tea.title}</StyledLink></h2>
                         <div>
                             <img src={tea.photo_url} alt=""/>
                         </div>

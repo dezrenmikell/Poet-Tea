@@ -9,6 +9,7 @@ body {
 img{
    width: 150px;
    height: 115px;
+   border-radius: 10px;
 }
 
 code {
