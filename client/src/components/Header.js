@@ -21,6 +21,16 @@ const CoolNav = styled.div`
     align-items: center;
     padding: 0;
   }
+  .health {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+  }
+  .jewlery {
+    position: absolute;
+    top: 50px;
+    left: 20px;
+  }
 `;
 const StyledLink = styled(Link)`
   background: silver;
@@ -45,8 +55,8 @@ class Header extends Component {
     return (
       <div>
         <CoolNav>
-          <StyledLink2 to="/health">Health Tips</StyledLink2>
-          <StyledLink2 to="/jewlerys">Jewlery Page</StyledLink2>
+          <StyledLink2 className="health" to="/health">Health Tips</StyledLink2>
+          <StyledLink2 className="jewlery" to="/jewlerys">Jewlery Page</StyledLink2>
           <img src={'https://i.imgur.com/9QlQwWB.jpg?1'} alt="" />
           <h3>AMAZING TO TASTE, TOUCH, FEEL AND SEE..SOUNDS LIKE POETRY</h3>
       

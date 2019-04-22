@@ -8,7 +8,7 @@ const StuffWrapper = styled.div`
     border: 7px solid orange;
     margin: 0 auto;
     margin-top: 5px;
-    background: silver;
+    background: orange;
     border-radius: 50px;
     align-items: center;
     justify-content: center;

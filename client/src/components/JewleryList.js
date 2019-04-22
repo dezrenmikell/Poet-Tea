@@ -4,7 +4,7 @@ import axios from 'axios';
 import styled from 'styled-components';
 
 const StyledLink = styled(Link)`
-  background: orange;
+  background: silver;
   text-align: center;
   border-radius: 15px;
   border: 2px solid black;
@@ -12,9 +12,9 @@ const StyledLink = styled(Link)`
 const StuffWrapper = styled.div`
     display: flex;
     flex-direction: column;
-    border: 7px solid orange;
+    border: 7px solid black;
     margin: 0 auto;
-    background: silver;
+    background: orange;
 
     width: 325px;
     border-radius: 50px;
@@ -60,7 +60,6 @@ const StuffWrapper = styled.div`
     }
     `;
 const PageWrapper = styled.div`
-        background: orange;
         border: 4px solid black;
 
         border-radius: 10px;

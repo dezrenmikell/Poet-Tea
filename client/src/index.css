@@ -6,6 +6,14 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background: silver;
 }
+#root {
+  background-image: linear-gradient(rgba(0, 0 , 0,  0.4), rgba(0, 0, 0, 0.4)), url("https://scontent-atl3-1.xx.fbcdn.net/v/t1.0-9/20638565_761148790738475_6815446706701470589_n.jpg?_nc_cat=101&_nc_ht=scontent-atl3-1.xx&oh=18c327bf4440c5b020bedc950e9d003e&oe=5D37EC74");
+  background-size: 100vw 100vh;
+  min-height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+ }
 img{
    width: 150px;
    height: 75px;

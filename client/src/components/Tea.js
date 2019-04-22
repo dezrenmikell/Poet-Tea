@@ -4,55 +4,51 @@ import Ingredient from "./Ingredient";
 import styled from "styled-components";
 
 const StuffWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  border: 7px solid orange;
+  margin: 0 auto;
+  margin-top: 5px;
+  background: silver;
+  border-radius: 50px;
+  align-items: center;
+  justify-content: center;
+  border: 4px solid black;
+
+  img {
     display: flex;
-    flex-direction: column;
-    border: 7px solid orange;
-    margin: 0 auto;
-    margin-top: 5px;
-    background: silver;
-    border-radius: 50px;
     align-items: center;
     justify-content: center;
-    border: 4px solid black;
+  }
 
-    img{
-      display: flex;
-      align-items: center;
-      justify-content: center;
+  input,
+  textarea {
+    font-size: 1.8em;
+    background-color: orange;
+    text-align: center;
+    margin: 0 auto;
+    border-radius: 50px;
+    display: flex;
+  }
+  input {
+    font-weight: bold;
+    font-size: 2em;
+    border: 4px solid silver;
+    border-radius: 50px;
+    background-color: orange;
+    text-align: center;
+  }
+  textarea {
+    display: flex;
+    text-align: center;
+    vertical-align: middle;
+    border: 4px solid silver;
+    justify-content: center;
+    align-items: center;
+  }
+`;
 
-    }
-
-    input,textarea {
-        font-size: 1.8em;
-        background-color: orange;        
-        text-align: center;
-        margin: 0 auto;
-        border-radius: 50px;
-        display: flex;
-    }
-    input{
-        font-weight: bold;
-        font-size: 2em;
-        border: 4px solid silver;
-        border-radius: 50px;
-        background-color: orange;        
-        text-align: center;
-
- 
-    }
-    textarea{
-        display: flex;
-        text-align: center;
-        vertical-align: middle;
-        border: 4px solid silver;
-        justify-content: center;
-        align-items: center;
-    }
-    
-    `;
-
-    const PageWrapper = styled.div`
-    background: orange;
+const PageWrapper = styled.div`
     border: 4px solid black;
     border-radius: 10px;
     display: flex;
@@ -82,7 +78,7 @@ h3{
   align-items: center;
   justify-content: center;
   text-align: center;
-  background: orange;
+  background: silver;
   border: 4px solid black
   border-radius: 30px;
 }
@@ -92,9 +88,14 @@ p{
   align-items: center;
   justify-content: center;
   text-align: center;
-  background: orange;
+  background: silver;
   border: 4px solid black
   border-radius: 30px;
+}
+
+.ingredient-form {
+  display: flex;
+  flex-direction: column;
 }
 `;
 
@@ -177,10 +178,6 @@ class Tea extends Component {
     this.setState({ oneNewIngredient: newIng });
   };
 
-
-
-
-
   handleChange = (ingredient, event) => {
     const newIngredients = [...this.state.ingredients];
 
@@ -195,13 +192,10 @@ class Tea extends Component {
 
   updateIngredient = (ingredient, e) => {
     e.preventDefault();
-    console.log(ingredient)
-    axios
-      .put(`/api/v1/ingredients/${ingredient.id}/`,  ingredient )
-      .then(res => {
-        this.setState({ ingredient: res.data });
-
-      });
+    console.log(ingredient);
+    axios.put(`/api/v1/ingredients/${ingredient.id}/`, ingredient).then(res => {
+      this.setState({ ingredient: res.data });
+    });
   };
 
   render() {
@@ -209,36 +203,39 @@ class Tea extends Component {
       <PageWrapper>
         <h2>{this.state.tea.title}</h2>
         <h4>{this.state.tea.description}</h4>
-        <img src={this.state.tea.photo_url} alt="" />
+        <div>
+          <img src={this.state.tea.photo_url} alt="" />
+        </div>
         <DeleteButton onClick={() => this.deleteTea(this.state.teaId)}>
           Delete Tea
         </DeleteButton>
-        
-        
-        
+
         <h2>Ingredients:</h2>
 
-        <form onSubmit={this.createIngredient}>
+        <form className="ingredient-form" onSubmit={this.createIngredient}>
           <div>
-            <input
-              type="text"
-              name="name"
-              placeholder="Name"
-              onChange={this.handleNewIngredientChange}
-            />
-            <textarea
-              name="description"
-              placeholder="Description"
-              cols="30"
-              rows="10"
-              onChange={this.handleNewIngredientChange}
-            />
+            <div>
+              <input
+                type="text"
+                name="name"
+                placeholder="Name"
+                onChange={this.handleNewIngredientChange}
+              />
+            </div>
+            <div>
+              <textarea
+                name="description"
+                placeholder="Description"
+                cols="30"
+                rows="10"
+                onChange={this.handleNewIngredientChange}
+              />
+            </div>
           </div>
           <AddButton>ADD</AddButton>
         </form>
         <div>
           {this.state.ingredients.map(ingredient => {
-            
             return (
               <StuffWrapper key={ingredient.id}>
                 <h3>{ingredient.name}</h3>
@@ -247,12 +244,11 @@ class Tea extends Component {
                   key={ingredient.id}
                   ingredient={ingredient}
                   teaId={this.state.tea.teaId}
-                //   ingredient.tea={this.state.tea.teaId}
+                  //   ingredient.tea={this.state.tea.teaId}
                   deleteIngredient={this.deleteIngredient}
                   handleChange={this.handleChange}
                   updateIngredient={this.updateIngredient}
                 />
-                
               </StuffWrapper>
             );
           })}
