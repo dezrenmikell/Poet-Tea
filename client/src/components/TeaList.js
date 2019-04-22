@@ -4,14 +4,63 @@ import axios from 'axios';
 import styled from 'styled-components';
 
 const StyledLink = styled(Link)`
-  background: silver;
+  background: orange;
   border: 2px solid black;
   border-radius: 8px;
   width: 100px;
   text-align: center;
 `;
+const StuffWrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+    border: 7px solid orange;
+    margin: 0 auto;
+    background: silver;
+
+    width: 325px;
+    border-radius: 50px;
+    height: 300px;
+    align-items: center;
+    justify-content: center;
+    border: 4px solid black;
+
+    input,textarea {
+        margin-bottom: 30px;
+        font-size: 1.8em;
+        background-color: orange;        
+        text-align: center;
+        margin: 0 auto;
+        width: 300px;
+        border-radius: 50px;
+        display: flex;
+    }
+    input{
+        font-weight: bold;
+        font-size: 2em;
+        
+        height: 50px;
+
+        border: 4px solid silver;
+        border-radius: 50px;
+        background-color: orange;        
+        text-align: center;
+
+ 
+    }
+    textarea{
+        display: flex;
+        text-align: center;
+        vertical-align: middle;
+        height: 50px;
+        border: 4px solid silver;
+        justify-content: center;
+        align-items: center;
+        padding: 15px;
+        width 270px;
+    }
+    `;
 const PageWrapper = styled.div`
-        background: silver;
+        background: orange;
         border: 4px solid black;
 
         border-radius: 10px;
@@ -20,7 +69,7 @@ const PageWrapper = styled.div`
         align-items: center;
         justify-content: center;
         text-align: center;
-        background: orange;
+        background: silver;
         border: 4px solid black
         border-radius: 30px;
 
@@ -38,15 +87,6 @@ const NewButton = styled.button`
     justify-content: center;
     justify-items: center;
     
-`;
-const DeleteButton = styled.button`
-  height: 20px;
-  margin: 0 auto;
-  marigin-top: 20px;
-  width: 70px;
-  border-radius: 10px;
-  background: red;
-  font-weight: bold;
 `;
 
 class TeaList extends Component {
@@ -110,16 +150,19 @@ class TeaList extends Component {
         }
         return (
             <PageWrapper>
+            <h2> All Teas </h2>
                 {this.state.teas.map(tea => {
                     return(
-                    <div key={tea.id}>
-                        <StyledLink to={`/teas/${tea.id}/`} key={tea.id}>{tea.title}</StyledLink>
+                    <StuffWrapper key={tea.id}>
+                        <h3><StyledLink to={`/teas/${tea.id}/`} key={tea.id}>{tea.title}</StyledLink></h3>
                         <div>
                             <img src={tea.photo_url} alt=""/>
                         </div>
-                    </div>
+                    </StuffWrapper>
                 )})}
+                <div>
                 <NewButton> Create A Tea </NewButton>
+                </div>
                 <h2> Create A Tea</h2>
                 <form onSubmit={this.handleCreation}>
                     <div>

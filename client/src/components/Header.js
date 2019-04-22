@@ -30,12 +30,14 @@ const StyledLink = styled(Link)`
   text-align: center;
 `;
 const StyledLink2 = styled(Link)`
-  display: block;
+  display: inline-block;
   background: silver;
   border: 2px solid black;
   border-radius: 8px;
   width: 100px;
   text-align: center;
+  align-items: row;
+
 `;
 
 class Header extends Component {

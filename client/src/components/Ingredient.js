@@ -1,5 +1,25 @@
 import React from "react";
-// import styled from "styled-components";
+import styled from "styled-components";
+
+const DeleteButton = styled.button`
+  height: 20px;
+  margin: 0 auto;
+  marigin-top: 20px;
+  width: 70px;
+  border-radius: 10px;
+  background: red;
+  font-weight: bold;
+  font-family: 'Lobster', cursive;
+`;
+
+const UpdateButton = styled.button`
+  margin: 0 auto;
+  marigin-top: 20px;
+  border-radius: 10px;
+  background: green;
+  font-weight: bold;
+  font-family: 'Lobster', cursive;
+`;
 
 
 function Ingredient(props) {
@@ -18,12 +38,12 @@ function Ingredient(props) {
         onChange={e => props.handleChange(props.ingredient, e)}
         value={props.ingredient.description}
       />
-      <button onClick={(e) => props.updateIngredient(props.ingredient, e)}>
+      <UpdateButton onClick={(e) => props.updateIngredient(props.ingredient, e)}>
       SUBMIT UPDATE
-      </button>
-      <button onClick={() => props.deleteIngredient(props.ingredient,)}>
+      </UpdateButton>
+      <DeleteButton onClick={() => props.deleteIngredient(props.ingredient,)}>
         DELETE
-      </button>
+      </DeleteButton>
     </div>
   );
 }

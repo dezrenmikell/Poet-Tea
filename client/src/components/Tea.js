@@ -9,11 +9,8 @@ const StuffWrapper = styled.div`
     border: 7px solid orange;
     margin: 0 auto;
     background: black;
-    
-    margin-top: 30px;
-    width: 325px;
     border-radius: 50px;
-    height: 300px;
+    font-family: 'Lobster', cursive;
     
     
 
@@ -25,10 +22,10 @@ const StuffWrapper = styled.div`
         font-size: 1.8em;
         background-color: orange;        
         text-align: center;
-        margin-top: 10px;
         margin: 0 auto;
         width: 300px;
         border-radius: 50px;
+        font-family: 'Lobster', cursive;
         
     }
     input{
@@ -36,15 +33,11 @@ const StuffWrapper = styled.div`
         font-size: 2em;
         
         height: 50px;
-        padding: 5px;
+
         border: 4px solid silver;
         border-radius: 50px;
-        margin-bottom: 30px;
         background-color: orange;        
         text-align: center;
-        margin-top: 10px;
-
- 
     }
     textarea{
         display: flex;
@@ -59,15 +52,22 @@ const StuffWrapper = styled.div`
     }
     `;
 const DeleteButton = styled.button`
-  height: 20px;
   margin: 0 auto;
   marigin-top: 20px;
-  width: 70px;
   border-radius: 10px;
   background: red;
   font-weight: bold;
 `;
 
+const AddButton = styled.button`
+  height: 20px;
+  margin: 0 auto;
+  marigin-top: 20px;
+  width: 70px;
+  border-radius: 10px;
+  background: green;
+  font-weight: bold;
+`;
 class Tea extends Component {
   state = {
     tea: {
@@ -184,7 +184,7 @@ class Tea extends Component {
               onChange={this.handleNewIngredientChange}
             />
           </div>
-          <button>ADD</button>
+          <AddButton>ADD</AddButton>
         </form>
         <div>
           {this.state.ingredients.map(ingredient => {
