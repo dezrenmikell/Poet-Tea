@@ -9,7 +9,6 @@ const StuffWrapper = styled.div`
   border: 7px solid orange;
   margin: 0 auto;
   margin-top: 5px;
-  background: silver;
   border-radius: 50px;
   align-items: center;
   justify-content: center;
@@ -19,30 +18,30 @@ const StuffWrapper = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    border: 4px solid black;
   }
 
   input,
   textarea {
     font-size: 1.8em;
-    background-color: orange;
+    background-color: silver;
     text-align: center;
     margin: 0 auto;
     border-radius: 50px;
     display: flex;
+    border: 4px solid orange;
   }
   input {
     font-weight: bold;
     font-size: 2em;
-    border: 4px solid silver;
     border-radius: 50px;
-    background-color: orange;
+    background-color: silver;
     text-align: center;
   }
   textarea {
     display: flex;
     text-align: center;
     vertical-align: middle;
-    border: 4px solid silver;
     justify-content: center;
     align-items: center;
   }
@@ -59,7 +58,7 @@ h2{
     align-items: center;
     justify-content: center;
     text-align: center;
-    background: silver;
+    background: orange;
     border: 4px solid black
     border-radius: 30px;
 }
@@ -68,7 +67,7 @@ h4{
   align-items: center;
   justify-content: center;
   text-align: center;
-  background: silver;
+  background: orange;
   border: 4px solid black
   border-radius: 30px;
 }
@@ -78,7 +77,7 @@ h3{
   align-items: center;
   justify-content: center;
   text-align: center;
-  background: silver;
+  background: orange;
   border: 4px solid black
   border-radius: 30px;
 }
@@ -88,7 +87,7 @@ p{
   align-items: center;
   justify-content: center;
   text-align: center;
-  background: silver;
+  background: orange;
   border: 4px solid black
   border-radius: 30px;
 }

@@ -4,7 +4,7 @@ import axios from 'axios';
 import styled from 'styled-components';
 
 const StyledLink = styled(Link)`
-  background: silver;
+  background: orange;
   text-align: center;
   border-radius: 15px;
   border: 2px solid black;
@@ -14,11 +14,11 @@ const StuffWrapper = styled.div`
     flex-direction: column;
     border: 7px solid black;
     margin: 0 auto;
-    background: orange;
+    background: silver;
 
-    width: 325px;
+    width: 180px;
+    height: 230px;
     border-radius: 50px;
-    height: 300px;
     align-items: center;
     justify-content: center;
     border: 4px solid black;
@@ -68,7 +68,7 @@ const PageWrapper = styled.div`
         align-items: center;
         justify-content: center;
         text-align: center;
-        background: silver;
+        background: orange;
         border: 4px solid black
         border-radius: 30px;
 

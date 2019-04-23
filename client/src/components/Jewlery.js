@@ -8,17 +8,18 @@ const StuffWrapper = styled.div`
     border: 7px solid orange;
     margin: 0 auto;
     margin-top: 5px;
-    background: orange;
     border-radius: 50px;
     align-items: center;
     justify-content: center;
-    border: 4px solid black;
+    border: 4px solid orange;
+    width: 250px;
+    height: 400px;
 
     img{
       display: flex;
       align-items: center;
       justify-content: center;
-
+      border: 4px solid black;
     }
 
     input,textarea {
@@ -56,6 +57,7 @@ const StuffWrapper = styled.div`
       background: orange;
       border: 4px solid black
       border-radius: 30px;
+      padding: 8px;
   }
   h4{
     display: flex;
@@ -65,6 +67,7 @@ const StuffWrapper = styled.div`
     background: orange;
     border: 4px solid black
     border-radius: 30px;
+    padding: 8px;
   }
   
   h3{
