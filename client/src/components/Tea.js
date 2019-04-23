@@ -6,13 +6,13 @@ import styled from "styled-components";
 const StuffWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  border: 7px solid orange;
+  border: 4px solid silver;
   margin: 0 auto;
   margin-top: 5px;
   border-radius: 50px;
   align-items: center;
   justify-content: center;
-  border: 4px solid black;
+  
 
   img {
     display: flex;
@@ -31,6 +31,7 @@ const StuffWrapper = styled.div`
     display: flex;
     border: 4px solid orange;
     font-family: 'Lobster', cursive;
+    width: 300px;
   }
   input {
     font-weight: bold;
@@ -62,6 +63,8 @@ h2{
     background: orange;
     border: 4px solid black
     border-radius: 30px;
+    padding: 5px;
+
 }
 h4{
   display: flex;
@@ -71,6 +74,7 @@ h4{
   background: orange;
   border: 4px solid black
   border-radius: 30px;
+  padding: 5px;
 }
 
 h3{
@@ -81,6 +85,7 @@ h3{
   background: orange;
   border: 4px solid black
   border-radius: 30px;
+  padding: 8px;
 }
 
 p{
@@ -91,6 +96,7 @@ p{
   background: orange;
   border: 4px solid black
   border-radius: 30px;
+  padding: 8px;
 }
 
 .ingredient-form {

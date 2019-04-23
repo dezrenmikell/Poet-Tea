@@ -7,6 +7,7 @@ const StyledLink = styled(Link)`
   background: orange;
   text-align: center;
   border-radius: 15px;
+  padding: 5px;
 `;
 const StuffWrapper = styled.div`
     display: flex;

@@ -8,6 +8,7 @@ const StyledLink = styled(Link)`
   text-align: center;
   border-radius: 15px;
   border: 2px solid black;
+  padding: 5px;
 `;
 const StuffWrapper = styled.div`
     display: flex;

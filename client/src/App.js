@@ -15,6 +15,7 @@ const StyledLink = styled(Link)`
   border-radius: 8px;
   width: 100px;
   text-align: center;
+  padding: 3px;
 `;
 
 class App extends Component {
