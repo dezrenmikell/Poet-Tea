@@ -30,6 +30,7 @@ const StuffWrapper = styled.div`
     border-radius: 50px;
     display: flex;
     border: 4px solid orange;
+    font-family: 'Lobster', cursive;
   }
   input {
     font-weight: bold;
@@ -104,16 +105,17 @@ const DeleteButton = styled.button`
   border-radius: 10px;
   background: red;
   font-weight: bold;
+  font-family: 'Lobster', cursive;
 `;
 
 const AddButton = styled.button`
-  height: 20px;
   margin: 0 auto;
   marigin-top: 20px;
-  width: 70px;
   border-radius: 10px;
   background: green;
   font-weight: bold;
+  border: 1px solid silver;
+  font-family: 'Lobster', cursive;
 `;
 class Tea extends Component {
   state = {
@@ -197,6 +199,18 @@ class Tea extends Component {
     });
   };
 
+  toggleEditForm = () => {
+    this.setState((state, props) => {
+        return {isEditFormDisplayed: !state.isEditFormDisplayed}
+    })
+}
+
+toggleAddForm = () => {
+  this.setState((state, props) => {
+      return {isAddFormDisplayed: !state.isAddFormDisplayed}
+  })
+}
+
   render() {
     return (
       <PageWrapper>
@@ -210,9 +224,14 @@ class Tea extends Component {
         </DeleteButton>
 
         <h2>Ingredients:</h2>
-
+        <div><AddButton onClick={this.toggleAddForm}>
+                    {this.state.isAddFormDisplayed === true ? 'Finished' : 'Add Ingredient'}
+                </AddButton></div>
+                {
+                    this.state.isAddFormDisplayed
+                        ?  
         <form className="ingredient-form" onSubmit={this.createIngredient}>
-          <div>
+          <StuffWrapper>
             <div>
               <input
                 type="text"
@@ -230,15 +249,21 @@ class Tea extends Component {
                 onChange={this.handleNewIngredientChange}
               />
             </div>
-          </div>
+          </StuffWrapper>
           <AddButton>ADD</AddButton>
-        </form>
+        </form> :null}
         <div>
           {this.state.ingredients.map(ingredient => {
             return (
               <StuffWrapper key={ingredient.id}>
                 <h3>{ingredient.name}</h3>
                 <p>{ingredient.description}</p>
+                <div><AddButton onClick={this.toggleEditForm}>
+                    {this.state.isEditFormDisplayed === true ? 'Finished' : 'Edit Ingredients'}
+                </AddButton></div>
+                {
+                    this.state.isEditFormDisplayed
+                        ?
                 <Ingredient
                   key={ingredient.id}
                   ingredient={ingredient}
@@ -248,6 +273,7 @@ class Tea extends Component {
                   handleChange={this.handleChange}
                   updateIngredient={this.updateIngredient}
                 />
+                :null}
               </StuffWrapper>
             );
           })}

@@ -88,7 +88,18 @@ const NewButton = styled.button`
     justify-items: center;
     
 `;
-
+const AddButton = styled.button`
+    background green;
+    border-radius: 30px;
+    font-weight: bold;
+    text-align: center;
+    border: 4px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    
+`;
 class TeaList extends Component {
     state = {
         error: '',
@@ -141,9 +152,9 @@ class TeaList extends Component {
         this.props.history.goBack();
     }
 
-    toggleEditForm = () => {
+    toggleAddForm = () => {
         this.setState((state, props) => {
-            return {isEditFormDisplayed: !state.isEditFormDisplayed}
+            return {isAddFormDisplayed: !state.isAddFormDisplayed}
         })
     }
 
@@ -166,10 +177,14 @@ class TeaList extends Component {
                         </div>
                     </StuffWrapper>
                 )})}
-                <div>
-                <NewButton onClick={this.toggleEditForm}> Create A Tea </NewButton>
-                </div>
+                <div><AddButton onClick={this.toggleAddForm}>
+                    {this.state.isAddFormDisplayed === true ? 'Finished' : 'Create A Tea'}
+                </AddButton></div>
                 <h2> Create A Tea</h2>
+                
+                {
+                    this.state.isAddFormDisplayed
+                        ?  
                 <form onSubmit={this.handleCreation}>
                     <div>
                         <label htmlFor="title">Tea Title</label>
@@ -199,8 +214,8 @@ class TeaList extends Component {
                             value={this.state.tea.photo_url}
                         />
                     </div>
-                    <NewButton onClick={this.handleCreation}> Create Tea</NewButton>
-                </form>
+                    <NewButton onClick={this.handleCreation}> Add Tea to List</NewButton>
+                </form>:null}
             </PageWrapper>
         );
     }
