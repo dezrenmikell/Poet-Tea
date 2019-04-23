@@ -16,6 +16,7 @@ const StyledLink = styled(Link)`
   width: 100px;
   text-align: center;
   padding: 3px;
+  height: 55px;
 `;
 
 class App extends Component {

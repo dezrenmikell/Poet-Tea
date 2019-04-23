@@ -63,7 +63,7 @@ const StuffWrapper = styled.div`
 const PageWrapper = styled.div`
     
         border: 4px solid black;
-
+        
         border-radius: 10px;
     h2{
         display: flex;
